@@ -1,0 +1,52 @@
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Assertions.Must;
+using UnityEngine.Windows;
+
+public class OrientationController : AgentComponent
+{
+    [SerializeField]
+    private bool flipOnStart;
+    [SerializeField]
+    private Collider2D objectCollider;
+    [SerializeField]
+    private Rigidbody2D rigidBody;
+    [SerializeField]
+    private float flipThreshold = 1.1f;
+
+    public Vector2 CurrentOrientation { get; private set; } = Vector2.right;
+
+    public void Awake()
+    {
+        if (flipOnStart) Flip();
+    }
+
+
+    public void SetAgentOrientation()
+    {
+        const float minMagnitude = 0.001f;
+        float magnitude = rigidBody.linearVelocity.magnitude;
+        if (minMagnitude < magnitude && Mathf.Abs(rigidBody.linearVelocity.normalized.x - CurrentOrientation.x) > flipThreshold)
+        {
+            Flip();
+        }
+    }
+
+
+    public void Flip()
+    {
+        CurrentOrientation = -CurrentOrientation;
+        transform.localScale = new Vector3
+        (
+            Mathf.Sign(CurrentOrientation.x) * Mathf.Abs(transform.localScale.x),
+            transform.localScale.y,
+            transform.localScale.z
+        );
+
+
+        float shift = objectCollider.transform.position.x - transform.position.x;
+        transform.position = new Vector2(transform.position.x - shift * 2, transform.position.y);
+    }
+}
