@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 7967176880448931614}
   - component: {fileID: 6533860003574527959}
   - component: {fileID: 5444635384601325713}
-  - component: {fileID: 3730804396971093237}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -197,7 +196,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1031920545
   m_SortingLayer: 2
-  m_SortingOrder: -4289
+  m_SortingOrder: -3379
   m_Sprite: {fileID: 7796452692219352389, guid: 103aa640ad338924391a239f6c6da847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -231,18 +230,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3730804396971093237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3807911961268814117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f8dd62189745643b4e3dcc528ab12f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimatorStartRandomizer
 --- !u!1 &5753974989839285568
 GameObject:
   m_ObjectHideFlags: 0

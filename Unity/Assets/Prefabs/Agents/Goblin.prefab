@@ -272,8 +272,8 @@ GameObject:
   - component: {fileID: 1318127200136817110}
   - component: {fileID: 6751808002673701505}
   - component: {fileID: 5936617975113410779}
-  - component: {fileID: 130281266410370525}
   - component: {fileID: 6321465321866097323}
+  - component: {fileID: 1711240679459948407}
   - component: {fileID: 5669567588697601147}
   m_Layer: 10
   m_Name: Goblin
@@ -364,21 +364,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0061659813, y: 0.03699553}
   m_Size: {x: 0.684978, y: 1.1104275}
   m_Direction: 0
---- !u!114 &130281266410370525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4994092194741365888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40bb68a499dbafa42913e98d2f3b4df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputController
-  OnMenuKeyPressed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6321465321866097323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +376,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e00881b3ea9efe46b27716fc99cc3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Agent
+--- !u!114 &1711240679459948407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994092194741365888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b206e1fc0fe9542ad905a2d2cba768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AgentInputProvider
 --- !u!114 &5669567588697601147
 MonoBehaviour:
   m_ObjectHideFlags: 0

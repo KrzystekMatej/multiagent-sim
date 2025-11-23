@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct InputData
+public class AgentInputData
 {
     public Vector2 MoveInput;
     public InputState Jump;
