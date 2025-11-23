@@ -9,14 +9,14 @@ public class WalkState : State
     public float MaxSpeed { get; set; }
 
 
-    protected InputController inputController;
+    protected AgentInputProvider inputProvider;
     private Rigidbody2D rigidBody;
 
     public override void Initialize(AgentContext agent)
     {
         base.Initialize(agent);
         rigidBody = agent.Get<Rigidbody2D>();
-        inputController = agent.Get<InputController>();
+        inputProvider = agent.Get<AgentInputProvider>();
     }
 
     protected override void HandleEnter()
@@ -26,7 +26,7 @@ public class WalkState : State
 
     protected override void HandleUpdate()
     {
-        Vector2 input = inputController.InputData.MoveInput;
+        Vector2 input = inputProvider.InputData.MoveInput;
         Vector2 acceleration = input * MaxAcceleration;
 
         rigidBody.linearVelocity += acceleration * Time.deltaTime;

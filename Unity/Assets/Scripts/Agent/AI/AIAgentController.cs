@@ -1,12 +1,16 @@
 using UnityEngine;
 
-public class AIInputController : InputController
+public class AIAgentController : AgentComponent, IAgentInputSource
 {
+    private AgentInputData inputData = new AgentInputData();
+
     private Vector2 suggestedSteeringForce;
     private bool stopRequest;
     private bool forceRequest;
     private bool jumpRequest;
     private bool attackRequest;
+
+    public AgentInputData ProvideInputSource() => inputData;
 
     private void Update()
     {
