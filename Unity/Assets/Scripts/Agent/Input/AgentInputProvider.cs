@@ -9,10 +9,12 @@ public class AgentInputProvider : AgentComponent
     public AgentInputData InputData { get => inputData; }
 
     private AIAgentController defaultController;
+    private Inventory inventory;
 
     public override void Initialize(AgentContext agent)
     {
         defaultController = agent.Get<AIAgentController>();
+        inventory = agent.Get<Inventory>();
         ResetSource();
     }
 
@@ -25,5 +27,10 @@ public class AgentInputProvider : AgentComponent
     {
         if (defaultController != null)
             SetSource(defaultController);
+    }
+
+    public void SelectInventorySlot(int slot)
+    {
+        inventory.SelectedSlotIndex = slot;
     }
 }

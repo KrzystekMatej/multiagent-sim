@@ -25,15 +25,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "8eb29e10-593f-4951-97de-f66313d94b28",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Menu",
                     "type": "Button",
                     "id": "9235aeac-9241-4aa2-b7a0-23f6df19ec45",
@@ -55,6 +46,24 @@
                     "name": "Run",
                     "type": "Button",
                     "id": "c0102edf-c27c-4628-af7a-35bd51ddb3cd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InventorySlot",
+                    "type": "Value",
+                    "id": "fe5a49ef-bf98-4190-8b89-28ffecd554f3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "05242921-2151-4110-b00c-92bc6a693b8f",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -130,17 +139,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8e566480-72de-4b37-b8fa-d7855432c5d3",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "4870b87b-f7bd-4456-8528-db3c8afd6d98",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -153,7 +151,7 @@
                 {
                     "name": "",
                     "id": "686f9536-70f3-47ad-8164-ba489b81fa1d",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -169,6 +167,116 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1215658f-9b20-4434-b3f1-47dc21ae252b",
+                    "path": "<Keyboard>/1",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=0)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fb70d1b3-bcb0-4aca-a656-1c6b807c1247",
+                    "path": "<Keyboard>/2",
+                    "interactions": "Press",
+                    "processors": "Scale",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae30b877-230d-492f-a5eb-aa2cbae97f21",
+                    "path": "<Keyboard>/3",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=2)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1fdf772-d856-4f47-80ae-dc16f9aa7488",
+                    "path": "<Keyboard>/4",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=3)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09125d33-3423-469c-b4f8-d496ddb20c66",
+                    "path": "<Keyboard>/5",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=4)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a38bcae-7ba4-42c6-8326-4d91d5bfcd26",
+                    "path": "<Keyboard>/6",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=5)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5ae11af-6c9a-4235-8bda-9b5516255af5",
+                    "path": "<Keyboard>/7",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=6)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "45ca5a74-33ad-40f4-b5af-fb6b77c9c006",
+                    "path": "<Keyboard>/8",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=7)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37d9f79e-625f-4754-80b6-be36c71657d0",
+                    "path": "<Keyboard>/9",
+                    "interactions": "Press",
+                    "processors": "Scale(factor=8)",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "InventorySlot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23d00281-9b94-4fc7-ac55-e24dc745ba23",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "UseItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

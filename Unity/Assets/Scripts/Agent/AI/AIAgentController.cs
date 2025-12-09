@@ -15,7 +15,7 @@ public class AIAgentController : AgentComponent, IAgentInputSource
     private void Update()
     {
         inputData.Jump = GetFixedInput(inputData.Jump, jumpRequest);
-        inputData.Attack = GetFixedInput(inputData.Attack, attackRequest);
+        inputData.UseItem = GetFixedInput(inputData.UseItem, attackRequest);
         suggestedSteeringForce = Vector2.zero;
         forceRequest = false;
         attackRequest = false;

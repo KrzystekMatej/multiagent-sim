@@ -196,7 +196,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1031920545
   m_SortingLayer: 2
-  m_SortingOrder: -4745
+  m_SortingOrder: -4705
   m_Sprite: {fileID: -4030792056451597264, guid: 9cc6abed00e5d5849a7483cdf0face04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,6 +275,9 @@ GameObject:
   - component: {fileID: 6321465321866097323}
   - component: {fileID: 1711240679459948407}
   - component: {fileID: 5669567588697601147}
+  - component: {fileID: 1584872196973088829}
+  - component: {fileID: 2011847409917939810}
+  - component: {fileID: 1330248836173902318}
   m_Layer: 10
   m_Name: Goblin
   m_TagString: Untagged
@@ -404,6 +407,68 @@ MonoBehaviour:
   objectCollider: {fileID: 5936617975113410779}
   rigidBody: {fileID: 6751808002673701505}
   flipThreshold: 1.1
+--- !u!114 &1584872196973088829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994092194741365888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450ab9b11400bc5409eac7c1cced5cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  itemSlots:
+  - item: {fileID: 11400000, guid: e33b4119b8280894bb44e88b2c7ce4ea, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 91b6f76f896a1b340b11dcee85dcf117, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 1a4a56db08e3a024a8ce02e3ee994db0, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: dfa81fc7e3e765945a1bf13fc1315749, type: 2}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 0}
+    quantity: 0
+  inventoryChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2011847409917939810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994092194741365888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cc92381c3ff2040b233f44814a8290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  health: 100
+--- !u!114 &1330248836173902318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994092194741365888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b91c08b9868cc445ac7c9532b809bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AIAgentController
 --- !u!1 &8036086275261176978
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +482,13 @@ GameObject:
   - component: {fileID: 2743206129721766798}
   - component: {fileID: 4031330551654114302}
   - component: {fileID: 4673441584377960361}
+  - component: {fileID: 1540456875399029361}
+  - component: {fileID: 8983679568114715014}
+  - component: {fileID: 401254829713993322}
+  - component: {fileID: 8591171098283978846}
+  - component: {fileID: 3401971287778218173}
+  - component: {fileID: 1946157843412304627}
+  - component: {fileID: 937398447846915718}
   m_Layer: 0
   m_Name: StateMachine
   m_TagString: Untagged
@@ -469,6 +541,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IdleState
   transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: ec3b679e750140d44a099a809804a58d, type: 2}
+  - {fileID: 11400000, guid: 56e4fe47befffac48a278249b9524a28, type: 2}
   - {fileID: 11400000, guid: 8918a19682db4d549b9063a30a55590d, type: 2}
   agent: {fileID: 0}
   OnEnter:
@@ -493,8 +569,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WalkState
   transitionTemplates:
-  - {fileID: 11400000, guid: 5ac6ff3b78ec781468a698d882e1b795, type: 2}
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 56e4fe47befffac48a278249b9524a28, type: 2}
+  - {fileID: 11400000, guid: ec3b679e750140d44a099a809804a58d, type: 2}
   - {fileID: 11400000, guid: b65c65ccbae3ff74b8d3ebcbccba171e, type: 2}
+  - {fileID: 11400000, guid: 5ac6ff3b78ec781468a698d882e1b795, type: 2}
   agent: {fileID: 0}
   OnEnter:
     m_PersistentCalls:
@@ -532,6 +612,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunState
   transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 56e4fe47befffac48a278249b9524a28, type: 2}
   - {fileID: 11400000, guid: 78679c6fb76f1e44aa3dff2146f19043, type: 2}
   agent: {fileID: 0}
   OnEnter:
@@ -556,4 +639,197 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   <MaxAcceleration>k__BackingField: 10
-  <MaxSpeed>k__BackingField: 8
+  <MaxSpeed>k__BackingField: 7
+--- !u!114 &1540456875399029361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fb76c561d64794d94453e66433307b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackState
+  transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 7aa0bfbff3b8ef54e97b9e4eb1db2c8b, type: 2}
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  attackDetector: {fileID: 11400000, guid: 3437c64e53949d5498ae7333ec7bd345, type: 2}
+--- !u!114 &8983679568114715014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10373075b135f50458659c631bad94ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HurtState
+  transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 7aa0bfbff3b8ef54e97b9e4eb1db2c8b, type: 2}
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &401254829713993322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3ac45cf251bcb448ec0b9069898035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathState
+  transitionTemplates: []
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5936617975113410779}
+        m_TargetAssemblyTypeName: UnityEngine.CapsuleCollider2D, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  deathDuration: 2
+--- !u!114 &8591171098283978846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4952aac71061842ab6683561f5c7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollState
+  transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 7aa0bfbff3b8ef54e97b9e4eb1db2c8b, type: 2}
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+  <RollSpeed>k__BackingField: 10
+--- !u!114 &3401971287778218173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6337f7e824a5f124c8d65adf5db86cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChopState
+  transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 5c2c0d0b06b7b4947868adaf3395c490, type: 2}
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1946157843412304627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6700474df3618584eaa1ab9f07d6ec72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildState
+  transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 5c2c0d0b06b7b4947868adaf3395c490, type: 2}
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &937398447846915718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036086275261176978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cb23434ac094a44bb3792ce0d71390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DigState
+  transitionTemplates:
+  - {fileID: 11400000, guid: ddad289a838358a42bafac8137aee8c8, type: 2}
+  - {fileID: 11400000, guid: 3fb5e48a3e68d314fbbbdaf782cfa46a, type: 2}
+  - {fileID: 11400000, guid: 5c2c0d0b06b7b4947868adaf3395c490, type: 2}
+  agent: {fileID: 0}
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []

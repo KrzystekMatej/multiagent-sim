@@ -1,0 +1,11 @@
+using UnityEngine;
+
+[System.Serializable]
+public class OnStopWalk : StateTransition
+{
+    public OnStopWalk(State target) : base(target) { }
+    public override bool IsTriggered(AgentContext agent)
+    {
+        return agent.Get<AgentInputProvider>().InputData.MoveInput.magnitude < Mathf.Epsilon;
+    }
+}
