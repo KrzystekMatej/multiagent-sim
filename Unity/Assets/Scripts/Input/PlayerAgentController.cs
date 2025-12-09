@@ -18,6 +18,7 @@ public class PlayerAgentController : MonoBehaviour, IAgentInputSource
     {
         inputActions = GetComponent<InputManager>().InputActions;
         inputActions.AgentControl.Enable();
+        inputActions.AgentControl.InventorySlot.performed += OnInventorySlotChanged;
     }
 
     private void OnEnable()
@@ -30,6 +31,11 @@ public class PlayerAgentController : MonoBehaviour, IAgentInputSource
     {
         inputActions.AgentControl.Disable();
         inputProvider.ResetSource();
+
+        if (eye == null) return;
+        if (eye.gameObject == null) return;
+        if (eye.transform == null) return;
+
         eye.transform.SetParent(null, true);
     }
 
@@ -37,13 +43,13 @@ public class PlayerAgentController : MonoBehaviour, IAgentInputSource
     {
         inputData.MoveInput = inputActions.AgentControl.Move.ReadValue<Vector2>();
         inputData.Jump = GetInputState(inputActions.AgentControl.Jump);
-        inputData.Attack = GetInputState(inputActions.AgentControl.Attack);
+        inputData.UseItem = GetInputState(inputActions.AgentControl.UseItem);
         inputData.Run = GetInputState(inputActions.AgentControl.Run);
         inputData.Roll = GetInputState(inputActions.AgentControl.Roll);
 
         bool isActive = inputData.MoveInput.sqrMagnitude > 0.0f ||
             inputData.Jump == InputState.Pressed ||
-            inputData.Attack == InputState.Pressed ||
+            inputData.UseItem == InputState.Pressed ||
             inputData.Run == InputState.Pressed ||
             inputData.Roll == InputState.Pressed;
 
@@ -62,5 +68,10 @@ public class PlayerAgentController : MonoBehaviour, IAgentInputSource
         inputProvider = agent.Get<AgentInputProvider>();
         eye.transform.SetParent(agent.transform, false);
         eye.transform.localPosition = Vector3.zero;
+    }
+
+    private void OnInventorySlotChanged(InputAction.CallbackContext context)
+    {
+        inputProvider.SelectInventorySlot(Mathf.RoundToInt(context.ReadValue<float>()));
     }
 }

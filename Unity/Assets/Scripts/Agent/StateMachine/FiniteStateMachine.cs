@@ -14,17 +14,26 @@ public class FiniteStateMachine : AgentComponent
     public State CurrentState { get; private set; }
     [SerializeField]
     private AgentContext agent;
+    private State[] states;
 
     public UnityEvent<State, State> OnTransition;
 
     public override void Initialize(AgentContext agent)
     {
         InitialState = InitialState ? InitialState : GetComponent<IdleState>();
+        states = GetComponents<State>();
         this.agent = agent;
     }  
 
     private void Start()
     {
+        foreach (State s in states)
+        {
+            foreach (StateTransition t in s.Transitions)
+            {
+               t.Initialize(agent);
+            }
+        }
         CurrentState = InitialState;
         CurrentState.PerformEnterActions();
     }

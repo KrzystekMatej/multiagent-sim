@@ -1,11 +1,12 @@
 using UnityEngine;
 
 [System.Serializable]
-public class OnAnimationComplete : StateTransition
+public class OnAnimationComplete : EventTriggeredTransition
 {
     public OnAnimationComplete(State target) : base(target) { }
-    public override bool IsTriggered(AgentContext agent)
+
+    public override void Initialize(AgentContext agent)
     {
-        return true;
+        agent.Get<AnimatorManager>().OnAnimationComplete.AddListener(Trigger);
     }
 }

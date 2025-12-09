@@ -7,9 +7,9 @@ public class AgentInputData
 {
     public Vector2 MoveInput;
     public InputState Jump;
-    public InputState Attack;
     public InputState Run;
     public InputState Roll;
+    public InputState UseItem;
 }
 
 public enum InputState
